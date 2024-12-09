@@ -4,7 +4,7 @@
     const forms = document.querySelectorAll('.requires-validation')
     Array.from(forms)
         .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
+            form.addEventListener('change', function (event) {
                 if (!form.checkValidity()) {
                     event.preventDefault()
                     event.stopPropagation()
@@ -14,3 +14,6 @@
             }, false)
         })
 })()
+
+
+

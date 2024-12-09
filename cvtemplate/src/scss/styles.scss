@@ -11,7 +11,7 @@ $bootstrap-icons-font-dir: "~bootstrap-icons/font/fonts";
 @import "~bootstrap-icons/font/bootstrap-icons.scss";
 
 // Import glightbox
-// @import "../../node_modules/glightbox/dist/css/glightbox.min.css";
+@import "../../node_modules/glightbox/dist/css/glightbox.min.css";
 
 /*
 |----------------------------------------------------------------------------
@@ -90,12 +90,12 @@ $dm-text-color-secondary: rgba(256, 256, 256, 0.7);
 @import "header";
 @import "banner";
 @import "social";
-// @import "about";
-// @import "arrow";
-// @import "experience";
-// @import "portfolio";
-// @import "githubapi";
-// @import "contact";
+@import "about";
+@import "arrow";
+@import "experience";
+@import "portfolio";
+@import "githubapi";
+@import "contact";
 @import "footer";
 
 

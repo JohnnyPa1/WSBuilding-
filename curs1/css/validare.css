@@ -154,3 +154,8 @@ body {
 .valid-feedback {
   color: #2acc80;
 }
+
+#successAlert{
+  display: none;
+  text-align: center;
+}

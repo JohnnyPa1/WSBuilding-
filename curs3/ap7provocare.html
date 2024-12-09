@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+</style>
+
+<body  onload="loadXMLDoc()">
+    <h1 >AP7 - PROVOCARE</h1>
+
+    <!-- <button type="button" onclick="loadXMLDoc()">Afiseaza datele</button>
+    <br><br> -->
+    <table id="demo"></table>
+
+    <script>
+        const showHere = document.getElementById('demo');
+        const url="https://jsonplaceholder.typicode.com/users"
+        function loadXMLDoc() {
+             // send request header to server
+
+             const headers = new Headers();
+            headers.append("Accept", "application/json");
+
+            // specify setting
+
+            const setting = {
+                method: "GET",
+                headers: headers,
+                mode: "cors"
+            };
+
+
+            const request = new Request(url, setting);
+
+            fetch(request)
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+
+                    throw new Error(response.statusText);
+                })
+                .then(str => {
+                    // turn string into XML and return XML
+                    return JSON.parse(str)
+                })
+                .then(data => {
+                    showData(data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+
+
+            function showData(data){
+                let table = `<tr><th>ID</th><th>Name</th><th>Username</th><th>Email</th><th>Company</th><th>Address</th></tr>`
+                data.forEach(element => {
+                    let elementAdress = element.address;
+                    let elementCompany = element.company;
+                    let newElement = `<tr>
+                        <td>${element.id}</td>
+                        <td>${element.name}</td>
+                        <td>${element.username}</td>
+                        <td>${element.email}</td>
+                        <td>${elementCompany.name}</td>
+                        <td>${elementAdress.city}, ${elementAdress.street}, ${elementAdress.suite}, ${elementAdress.zipcode}</td>
+                    </tr>`;
+                table += newElement;            
+                });
+                showHere.innerHTML = table;
+            }   
+        };
+    </script>
+
+</body>
+
+</html>
