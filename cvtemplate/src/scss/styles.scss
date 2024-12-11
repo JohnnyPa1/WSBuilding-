@@ -3,7 +3,7 @@
  * Version: Bootstrap 5.3.3 +Webpack 5.90.3 
  * Author: Adrian Adiaconitei for LinkAcademy
 */
-// @import "darkmode";
+@import "darkmode";
 
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
@@ -97,6 +97,7 @@ $dm-text-color-secondary: rgba(256, 256, 256, 0.7);
 @import "githubapi";
 @import "contact";
 @import "footer";
+
 
 
 

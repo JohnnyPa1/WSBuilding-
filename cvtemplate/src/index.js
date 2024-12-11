@@ -19,3 +19,7 @@ import './js/experience.js'
 
 import './js/githubapi.js'
 
+import './js/translate.js'
+
+import './js/darkmode.js'
+
